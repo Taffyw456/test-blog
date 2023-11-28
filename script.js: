@@ -1,0 +1,32 @@
+function fetchCards() {
+  fetch('data.json')
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(data) {
+      renderCards(data);
+    })
+    .catch(function(error) {
+      console.log('Error:', error);
+    });
+}
+
+function renderCards(data) {
+  var cardGrid = document.getElementById('cardGrid');
+
+  data.forEach(function(card) {
+    var cardElement = document.createElement('div');
+    cardElement.className = 'card';
+
+    var titleElement = document.createElement('h2');
+    titleElement.textContent = card.title;
+
+    var descriptionElement = document.createElement('p');
+    descriptionElement.textContent = card.description;
+
+    cardElement.appendChild(titleElement);
+    cardElement.appendChild(descriptionElement);
+
+    cardGrid.appendChild(cardElement);
+  });
+}
