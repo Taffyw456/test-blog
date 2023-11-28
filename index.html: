@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Creative Writing Blog</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+  <header>
+    <img src="hero.png" alt="Hero Image" class="hero-image">
+    <nav>
+      <ul class="navigation">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="card-grid" id="cardGrid"></section>
+  </main>
+
+  <script src="data.json"></script>
+  <script>
+    window.onload = function() {
+      fetchCards();
+    };
+  </script>
+</body>
+</html>
